@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
-
 import { SectionHeading } from "@/components/section-heading";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Nosotros",
+export const metadata = buildPageMetadata({
+  title: "Nosotros: CardonSense",
   description:
-    "CardonSense es la empresa que desarrolla CitySensor para transformar datos territoriales en decisiones publicas accionables.",
-};
+    "Conoce CardonSense, la empresa que desarrolla CitySensor para convertir datos territoriales en decisiones publicas accionables.",
+  path: "/nosotros",
+  keywords: ["empresa cardonsense", "equipo de inteligencia territorial", "mision cardonsense"],
+});
 
 const teamPlaceholders = [
   {

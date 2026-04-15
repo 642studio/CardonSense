@@ -1,15 +1,17 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 
 import { SectionHeading } from "@/components/section-heading";
 import { TrackedLink } from "@/components/tracked-link";
 import { FUTURE_APPLICATIONS } from "@/data/site";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Inicio",
+export const metadata = buildPageMetadata({
+  title: "CitySensor: inteligencia territorial para ciudades",
   description:
-    "CitySensor es el producto principal de CardonSense para inteligencia territorial en gobiernos municipales.",
-};
+    "CitySensor es el producto principal de CardonSense para detectar, analizar y priorizar incidencias urbanas con evidencia territorial.",
+  path: "/",
+  keywords: ["citysensor para ciudades", "plataforma de inteligencia territorial", "gestion municipal basada en datos"],
+});
 
 const problemCards = [
   {
@@ -81,8 +83,8 @@ export default function HomePage() {
             <div className="grid-overlay absolute inset-0 opacity-[0.16]" />
             <div className="relative overflow-hidden rounded-2xl border border-brand-moss/34 bg-brand-paper/88 shadow-[inset_0_1px_0_rgba(255,255,255,0.7)]">
               <Image
-                src="/brand/hero-bachejoa-cover.png"
-                alt="Portada de Bachejoa para validacion de CitySensor"
+                src="/brand/hero-citysensor-cover.png"
+                alt="Visualizacion territorial de incidencias para CitySensor"
                 width={1024}
                 height={1024}
                 className="h-auto w-full object-contain"

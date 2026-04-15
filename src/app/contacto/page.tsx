@@ -1,14 +1,16 @@
-import type { Metadata } from "next";
 import { Suspense } from "react";
 
 import { LeadForm } from "@/components/lead-form";
 import { SectionHeading } from "@/components/section-heading";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Contacto",
+export const metadata = buildPageMetadata({
+  title: "Contacto: demo y piloto",
   description:
-    "Solicita una demo de CitySensor, un piloto municipal o una implementacion de Bachejoa.",
-};
+    "Solicita una demo de CitySensor, un piloto municipal o una implementacion Bachejoa para tu municipio.",
+  path: "/contacto",
+  keywords: ["contacto cardonsense", "demo citysensor", "piloto municipal"],
+});
 
 export default function ContactoPage() {
   return (

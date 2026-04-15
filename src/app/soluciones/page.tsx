@@ -1,15 +1,17 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 
 import { SectionHeading } from "@/components/section-heading";
 import { TrackedLink } from "@/components/tracked-link";
 import { FUTURE_APPLICATIONS } from "@/data/site";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Soluciones",
+export const metadata = buildPageMetadata({
+  title: "Aplicaciones de CitySensor",
   description:
-    "Aplicaciones construidas sobre CitySensor: Bachejoa como caso activo y nuevos modulos de infraestructura urbana.",
-};
+    "Portafolio de aplicaciones construidas sobre CitySensor: Bachejoa activo y nuevas implementaciones para drenaje, alumbrado, residuos y planificacion.",
+  path: "/soluciones",
+  keywords: ["aplicaciones citysensor", "bachejoa", "soluciones de infraestructura urbana"],
+});
 
 export default function SolucionesPage() {
   return (

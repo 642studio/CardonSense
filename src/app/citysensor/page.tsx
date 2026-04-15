@@ -1,13 +1,44 @@
-import type { Metadata } from "next";
-
 import { MapDemo } from "@/components/map-demo";
 import { SectionHeading } from "@/components/section-heading";
 import { TrackedLink } from "@/components/tracked-link";
+import { SITE_URL, buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "CitySensor",
+export const metadata = buildPageMetadata({
+  title: "CitySensor: producto de inteligencia territorial",
+  description:
+    "CitySensor permite a gobiernos municipales detectar, analizar y priorizar incidencias urbanas con mapas operativos y analisis geoespacial.",
+  path: "/citysensor",
+  keywords: ["producto citysensor", "software para gobiernos municipales", "analisis geoespacial municipal"],
+});
+
+const citySensorSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": `${SITE_URL}/citysensor#softwareapplication`,
+  name: "CitySensor",
+  alternateName: "CitySensor de CardonSense",
+  url: `${SITE_URL}/citysensor`,
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web",
+  inLanguage: "es-MX",
   description:
     "CitySensor es el producto principal de CardonSense para detectar, analizar y priorizar incidencias urbanas con inteligencia territorial.",
+  publisher: {
+    "@id": `${SITE_URL}/#organization`,
+  },
+  audience: {
+    "@type": "Audience",
+    audienceType: "Gobiernos municipales",
+  },
+  featureList: [
+    "Mapa interactivo de incidencias",
+    "Analisis territorial por severidad y zona critica",
+    "Priorizacion operativa de intervenciones",
+    "Dashboard institucional con trazabilidad",
+  ],
+  isPartOf: {
+    "@id": `${SITE_URL}/#website`,
+  },
 };
 
 const capabilities = [
@@ -42,6 +73,7 @@ const benefits = [
 export default function CitySensorPage() {
   return (
     <div className="space-y-16 pb-12 sm:space-y-20">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(citySensorSchema) }} />
       <section className="surface-1 rounded-3xl p-6 sm:p-10">
         <SectionHeading
           eyebrow="Producto principal"
