@@ -74,10 +74,11 @@ export function MapDemo() {
       </div>
 
       <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-brand-moss/40 bg-brand-surface-soft">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(47,107,63,0.14),transparent_35%),radial-gradient(circle_at_75%_75%,rgba(164,74,63,0.14),transparent_40%)]" />
-        <div className="territory-topo absolute inset-0 opacity-[0.2]" />
-        <div className="grid-overlay absolute inset-0 opacity-[0.6]" />
-        <div className="territory-points absolute inset-0 opacity-[0.08]" />
+        <div className="absolute inset-0 bg-[url('/brand/background-map.png')] bg-cover bg-center opacity-[0.44] sepia-[0.14] saturate-[0.72]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(47,107,63,0.15),transparent_35%),radial-gradient(circle_at_75%_75%,rgba(164,74,63,0.15),transparent_42%)]" />
+        <div className="territory-topo absolute inset-0 opacity-[0.18]" />
+        <div className="grid-overlay absolute inset-0 opacity-[0.32]" />
+        <div className="territory-points absolute inset-0 opacity-[0.12]" />
 
         {incidents.map((incident) => (
           <button
