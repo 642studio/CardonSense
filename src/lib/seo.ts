@@ -47,6 +47,19 @@ export function canonicalUrl(path: string): string {
   return normalizedPath === "/" ? SITE_URL : `${SITE_URL}${normalizedPath}`;
 }
 
+function brandFirstTitle(title: string): string {
+  const normalized = title.trim();
+  if (!normalized) {
+    return SITE_NAME;
+  }
+
+  if (normalized.toLowerCase().startsWith(SITE_NAME.toLowerCase())) {
+    return normalized;
+  }
+
+  return `${SITE_NAME} | ${normalized}`;
+}
+
 export function buildPageMetadata({
   title,
   description,
@@ -55,9 +68,12 @@ export function buildPageMetadata({
 }: PageMetadataInput): Metadata {
   const normalizedPath = normalizePath(path);
   const canonical = canonicalUrl(normalizedPath);
+  const seoTitle = brandFirstTitle(title);
 
   return {
-    title,
+    title: {
+      absolute: seoTitle,
+    },
     description,
     keywords: Array.from(new Set([...BASE_KEYWORDS, ...keywords])),
     alternates: {
@@ -67,7 +83,7 @@ export function buildPageMetadata({
       },
     },
     openGraph: {
-      title,
+      title: seoTitle,
       description,
       url: canonical,
       siteName: SITE_NAME,
@@ -77,7 +93,7 @@ export function buildPageMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: seoTitle,
       description,
       images: [DEFAULT_OG_IMAGE.url],
     },

@@ -31,10 +31,7 @@ const headingFont = Raleway({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   applicationName: SITE_NAME,
-  title: {
-    default: "CardonSense | CitySensor",
-    template: "%s | CardonSense",
-  },
+  title: "CardonSense | Inteligencia territorial",
   description: SITE_DESCRIPTION,
   keywords: [...BASE_KEYWORDS],
   category: "Government & Public Services",
@@ -55,7 +52,7 @@ export const metadata: Metadata = {
     shortcut: ["/favicon.ico"],
   },
   openGraph: {
-    title: "CardonSense | CitySensor",
+    title: "CardonSense | Inteligencia territorial",
     description:
       "CitySensor es el producto principal de CardonSense para gobiernos municipales que necesitan gestionar el territorio con datos.",
     url: SITE_URL,
@@ -66,7 +63,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CardonSense | CitySensor",
+    title: "CardonSense | Inteligencia territorial",
     description:
       "CardonSense convierte reportes y senales urbanas en decisiones accionables con CitySensor.",
     images: [DEFAULT_OG_IMAGE.url],

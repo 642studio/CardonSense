@@ -6,7 +6,7 @@ import { FUTURE_APPLICATIONS } from "@/data/site";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: "CitySensor: inteligencia territorial para ciudades",
+  title: "Inteligencia territorial con CitySensor",
   description:
     "CitySensor es el producto principal de CardonSense para detectar, analizar y priorizar incidencias urbanas con evidencia territorial.",
   path: "/",
