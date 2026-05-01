@@ -8,6 +8,7 @@ export type FutureApplication = {
 export const NAV_LINKS = [
   { href: "/", label: "Inicio" },
   { href: "/citysensor", label: "CitySensor" },
+  { href: "/mobile", label: "App móvil" },
   { href: "/soluciones", label: "Soluciones" },
   { href: "/nosotros", label: "Nosotros" },
   { href: "/contacto", label: "Contacto" },

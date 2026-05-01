@@ -363,6 +363,14 @@ export default function BachejoaPage() {
           >
             Agendar piloto Bachejoa
           </TrackedLink>
+
+          <TrackedLink
+            href="/mobile"
+            eventName="cta_bachejoa_mobile_app"
+            className="inline-flex h-10 items-center justify-center rounded-full border border-brand-moss/35 bg-brand-card px-6 text-sm font-semibold text-brand-forest transition hover:bg-brand-surface sm:col-span-2 lg:col-span-3 lg:justify-self-start"
+          >
+            Ver app movil para captura en campo
+          </TrackedLink>
         </div>
       </section>
     </div>

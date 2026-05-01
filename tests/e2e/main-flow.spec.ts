@@ -16,6 +16,15 @@ test("flujo principal: inicio -> citysensor -> soluciones -> contacto -> envio",
     .click();
 
   await expect(page).toHaveURL(/\/citysensor/);
+  await expect(
+    page.getByRole("navigation").getByRole("link", { name: "App móvil", exact: true }),
+  ).toBeVisible();
+
+  await page
+    .getByRole("navigation")
+    .getByRole("link", { name: "App móvil", exact: true })
+    .click();
+  await expect(page).toHaveURL(/\/mobile/);
 
   await page
     .getByRole("navigation")
