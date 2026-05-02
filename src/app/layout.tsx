@@ -3,6 +3,7 @@ import { Montserrat, Raleway } from "next/font/google";
 
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { SmoothScroll } from "@/components/smooth-scroll";
 import {
   BASE_KEYWORDS,
   DEFAULT_OG_IMAGE,
@@ -91,16 +92,18 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
           />
         ))}
-        <div className="relative min-h-screen overflow-x-clip">
-          <div className="pointer-events-none absolute inset-0">
-            <div className="hero-grid absolute inset-0 opacity-[0.08]" />
-            <div className="territory-topo absolute inset-0 opacity-[0.015]" />
-            <div className="territory-points absolute inset-0 opacity-[0.01]" />
+        <SmoothScroll>
+          <div className="relative min-h-screen overflow-x-clip">
+            <div className="pointer-events-none absolute inset-0">
+              <div className="hero-grid absolute inset-0 opacity-[0.08]" />
+              <div className="territory-topo absolute inset-0 opacity-[0.015]" />
+              <div className="territory-points absolute inset-0 opacity-[0.01]" />
+            </div>
+            <SiteHeader />
+            <main className="relative z-10 mx-auto w-full max-w-7xl px-4 pt-10 sm:px-6 lg:px-8">{children}</main>
+            <SiteFooter />
           </div>
-          <SiteHeader />
-          <main className="relative z-10 mx-auto w-full max-w-7xl px-4 pt-10 sm:px-6 lg:px-8">{children}</main>
-          <SiteFooter />
-        </div>
+        </SmoothScroll>
       </body>
     </html>
   );

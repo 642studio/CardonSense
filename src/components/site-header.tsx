@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 import { BrandLogo } from "@/components/brand-logo";
+import { ScrollProgress } from "@/components/scroll-progress";
 import { NAV_LINKS } from "@/data/site";
 import { trackEvent } from "@/lib/analytics";
 import { cn } from "@/lib/cn";
@@ -15,6 +16,7 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-brand-moss/30 bg-brand-surface-soft/90 backdrop-blur-md">
+      <ScrollProgress />
       <div className="mx-auto w-full max-w-7xl px-4 py-3 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-3">
           <Link href="/" className="flex min-w-0 items-center" aria-label="Inicio CardonSense">
